@@ -79,6 +79,15 @@ h2.ShowTitleHeader.text-center {
   margin-bottom: 20px;
 }
 
+h1.groupNameHeader {
+	margin-left: 10px;
+	background-color: rgba(101,100,100,0.498039);
+  	border: solid black 1px;
+  	display: inline-block;
+  	color: #fff;
+  	padding: 5px;
+}
+
 div#showTitleColumn.col-md-10.col-md-offset-0 {
   text-align:center;
 }

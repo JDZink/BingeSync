@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monda:400,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/createUser.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
@@ -51,7 +52,7 @@
 	                <h1 class="text-left" class="groupNameHeader">${party.name} </h1>
                     <c:forEach items="${party.tvShows}" var="tvShow">
 	                        <div id="showDiv">
-	                            <h2 class="text-left" class="showTitleHeader">${tvShow.title} </h2>
+	                            <h2 class="showTitleHeader">${tvShow.title} </h2>
 	                            <img src="${tvShow.imgUrl}" class="showImage" style="height:70px;" />
 	                            
 	                            <c:forEach items="${tvShow.seasons}" var="season">

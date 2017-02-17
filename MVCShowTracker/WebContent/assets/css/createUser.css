@@ -12,6 +12,16 @@ h2#bingeSyncCreateUserHeading.text-center:hover {
   color:#e49263;
 }
 
+
+h1.groupNameHeader {
+	margin-left: 10px;
+	background-color: rgba(101,100,100,0.498039);
+  	border: solid black 1px;
+  	display: inline-block;
+  	color: #fff;
+  	padding: 5px;
+}
+
 i.glyphicon.glyphicon-edit {
   font-size:35px;
   margin:10px;
