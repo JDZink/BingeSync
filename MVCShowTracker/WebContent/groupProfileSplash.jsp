@@ -31,10 +31,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="trackShow.do">ManageShows.</a></li>
-                        <li role="presentation"><a href="viewParties.do">ViewGroups.</a></li>   
+                        <li role="presentation"><a href="trackShow.do">AddShows.</a></li>
+                        <li role="presentation"><a href="viewParties.do">ViewGroups.</a></li>
                         <li role="presentation"><a href="manageParties.do">ManageGroups. </a></li>
-                        <li role="presentation"><a class="text-muted" href="goHome.do" id="logOutButton">Home. </a></li>
+
                         <li role="presentation"><a class="text-muted" href="logOut.do" id="logOutButton">LogOut. </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-left"></ul>
@@ -52,16 +52,17 @@
 	                <h1 class="text-left" class="groupNameHeader">${party.name} </h1>
                     <c:forEach items="${party.tvShows}" var="tvShow">
 	                        <div id="showDiv">
+
 	                            <h2 class="showTitleHeader">${tvShow.title} </h2>
 	                            <img src="${tvShow.imgUrl}" class="showImage" style="height:70px;" />
-	                            
+
 	                            <c:forEach items="${tvShow.seasons}" var="season">
 			                            <div id="seasonDiv">
-			                            	 <form action="watchEpisode.do" method="post">
+			                            	<form action="watchEpisodeAlt.do" method="post">
 			                                <h3 class="text-left" id="seasonTitle">${season.title}
 			                                <button class="btn btn-default" type="submit">Update </button></h3>
 											<input type="hidden" name="seasonId" value="${season.id}">
-											<input type="hidden" name="userId" value="${user.id}"> 
+											<input type="hidden" name="userId" value="${user.id}">
 												<div class="checkbox-wrapper">
 													<div class="checkbox">
 			 											<div id="episodesDiv">
@@ -95,13 +96,13 @@
 		 												</div>
 													</div>
 												</div>
-											
+
 											</form>
 			                            </div>
 	                            </c:forEach>
 	                        </div>
-                        
-                        
+
+
                         </c:forEach>
                     </div>
                   </c:forEach>

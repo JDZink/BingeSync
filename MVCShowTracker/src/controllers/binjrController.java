@@ -298,6 +298,17 @@ public class binjrController {
 		resetSessionAttributes(session, userId);
 		return "profileSplash.jsp";
 	}
+	
+	@RequestMapping(path = "watchEpisodeAlt.do")
+	public String watchEpisodeAlt(HttpSession session, Integer userId, Integer seasonId, Integer... watchedEpisodes) {
+		if (watchedEpisodes == null) {
+			watchedEpisodes = new Integer[0];
+		}
+		cDao.updateSeason(userId, seasonId, watchedEpisodes);
+		
+		resetSessionAttributes(session, userId);
+		return "viewParties.do";
+	}
 
 	@RequestMapping(path = "logOut.do")
 	public String logOut(HttpSession session) {

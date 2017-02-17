@@ -9,6 +9,7 @@ body {
   color:#265bc1;
 }
 
+
 nav.navbar.navbar-default.navbar-fixed-top {
   background-color:rgba(8,8,8,0.69);
   min-height:40px;
@@ -97,13 +98,18 @@ h3#seasonTitle.text-left {
 }
 
 div#showDiv {
-  background-color:rgba(101,100,100,0.498039);
   border:solid #e49263 1px;
   color:#fff;
   padding-left: 16px;
   margin-left:-1px;
   margin-right:-1px;
 }
+
+div#allShowsDiv {
+	color: #fff;
+	background-color:rgba(101,100,100,0.498039);
+}
+
 
 h2#showTitleHeader.text-left {
   margin-left:5px;

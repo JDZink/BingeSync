@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BingeSync > Track New Shows</title>
+    <title>BingeSync > Track Group Shows</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monda:400,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -25,15 +25,14 @@
         <nav class="navbar navbar-default navbar-fixed-top opaque-navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="goHome.do"> <strong>BingeSync</strong><span id="hiUserSpan"> &gt; Hi, ${user.username}.</span></a>
+                    <a class="navbar-brand navbar-link" href="goHome.do"> <strong>BingeSync</strong><span id="hiUserSpan"> &gt; Hi, ${user.username}. </span> > Edit Group: ${party.name}</a>
                     <button class="navbar-toggle collapsed toggle-animated" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="trackShow.do">ManageShows.</a></li>
+                        <li role="presentation"><a href="trackShow.do">AddShows.</a></li>
                        <li role="presentation"><a href="viewParties.do">ViewGroups.</a></li>   
                         <li role="presentation"><a href="manageParties.do">ManageGroups. </a></li>
-                        <li role="presentation"><a class="text-muted" href="goHome.do" id="logOutButton">Home. </a></li>
                         <li role="presentation"><a class="text-muted" href="logOut.do" id="logOutButton">LogOut. </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-left"></ul>
@@ -42,54 +41,54 @@
             </div>
         </nav>
     </div>
-       <form action="addPartyShows.do"> 
-    <div id="allUnwatchedShows">
-        <c:forEach items="${nonPartyShows}" var="tvShow">
-        <div class="individualShowBoxInManagesShow">
-            <h4 class="showTitleInManageShow">${tvShow.title}</h4>
-             <img src="${tvShow.imgUrl}" class="showImageInManageShow">
-            <div class="checkbox">
-                <label class="trackShowLabel">
-                <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Track Show</label>
-            </div>
-        </div>
-
-       </c:forEach>
-        <input type="hidden" name="partyId" value="${party.id}">
-       
-    <div class="container">
-            <div class="row" id="buttonRowManageShow">
+    <form action="addPartyShows.do"> 
+	    <div id="allUnwatchedShows">
+	        <c:forEach items="${nonPartyShows}" var="tvShow">
+	        <div class="individualShowBoxInManagesShow">
+	            <h4 class="showTitleInManageShow">${tvShow.title}</h4>
+	             <img src="${tvShow.imgUrl}" class="showImageInManageShow">
+	            <div class="checkbox">
+	                <label class="trackShowLabel">
+	                <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Follow</label>
+	            </div>
+	        </div>
+	
+	       </c:forEach>
+	        <input type="hidden" name="partyId" value="${party.id}">
+	       
+	    </div>
+   		<div class="container">
+            <div class="row" class="buttonRowManageShow">
                 <div class="col-md-4" id="buttonColumnMangeShows">
-                    <button class="btn btn-default btn-sm" type="submit" id="trackShowsSubmitButton">Track </button>
-                </div>
+	   	           	<button class="btn btn-default btn-sm" type="submit" id="trackShowsSubmitButton">Follow </button>
+	          	</div>
             </div>
         </div>
-    </div>
     </form>
-       <form action="removePartyShows.do"> 
-    <div id="allUnwatchedShows">
-        <c:forEach items="${party.tvShows}" var="tvShow">
-        <div class="individualShowBoxInManagesShow">
-            <h4 class="showTitleInManageShow">${tvShow.title}</h4>
-             <img src="${tvShow.imgUrl}" class="showImageInManageShow">
-            <div class="checkbox">
-                <label class="trackShowLabel">
-                <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Track Show</label>
-                
-            </div>
-        </div>
-        </c:forEach>
-        <input type="hidden" name="partyId" value="${party.id}">
-       
-    <div class="container">
-            <div class="row" id="buttonRowManageShow">
-                <div class="col-md-4" id="buttonColumnMangeShows">
-                    <button class="btn btn-default btn-sm" type="submit" id="trackShowsSubmitButton">UnTrack </button>
-                </div>
-            </div>
-        </div>
-    </div>
-        </form>
+    <form action="removePartyShows.do"> 
+	    <div id="allUnwatchedShows" style="margin-top: 20px;">
+	        <c:forEach items="${party.tvShows}" var="tvShow">
+	        <div class="individualShowBoxInManagesShow">
+	            <h4 class="showTitleInManageShow">${tvShow.title}</h4>
+	            <img src="${tvShow.imgUrl}" class="showImageInManageShow">
+	            <div class="checkbox">
+	                <label class="trackShowLabel">
+	                <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Follow</label>
+	                
+	            </div>
+	        </div>
+	        </c:forEach>
+	        <input type="hidden" name="partyId" value="${party.id}">
+	       
+	    </div>
+	    <div class="container">
+	     	<div class="row" id="buttonRowManageShow">
+	   	        <div class="col-md-4" id="buttonColumnMangeShows">
+	   	           	<button class="btn btn-default btn-sm" type="submit" id="trackShowsSubmitButton">Unfollow </button>
+	          	</div>
+	     	</div>
+	  	</div>
+    </form>
     <div>
     </div>
     <div class="footer-basic">

@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BingeSync > Track New Shows</title>
+    <title>BingeSync > Follow New Shows</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monda:400,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -30,10 +30,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="trackShow.do">ManageShows.</a></li>
+                        <li role="presentation"><a href="trackShow.do">AddShows.</a></li>
                        <li role="presentation"><a href="viewParties.do">ViewGroups.</a></li>   
                         <li role="presentation"><a href="manageParties.do">ManageGroups. </a></li>
-                        <li role="presentation"><a class="text-muted" href="goHome.do" id="logOutButton">Home. </a></li>
                         <li role="presentation"><a class="text-muted" href="logOut.do" id="logOutButton">LogOut. </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-left"></ul>
@@ -50,13 +49,14 @@
              <img src="${tvShow.imgUrl}" class="showImageInManageShow">
             <div class="checkbox">
                 <label class="trackShowLabel">
-                    <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Track Show</label>
+                    <input type="checkbox" name="tvShowIds" value='${tvShow.id}'>Follow</label>
             </div>
         </div>
 
         			</c:forEach>
         <input type="hidden" name="userId" value="${user.id}">
        
+    </div>
     <div class="container">
             <div class="row" id="buttonRowManageShow">
                 <div class="col-md-4" id="buttonColumnMangeShows">
@@ -64,7 +64,6 @@
                 </div>
             </div>
         </div>
-    </div>
         </form>
     <div>
     </div>
